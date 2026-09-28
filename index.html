@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ead2c6">
+  <title>Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Noto+Naskh+Arabic:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="opening" class="opening">
+    <div class="envelope-wrap" id="openInvitation" role="button" tabindex="0" aria-label="Open invitation">
+      <div class="envelope">
+        <div class="paper-texture"></div>
+        <div class="flap"></div>
+        <div class="left-fold"></div><div class="right-fold"></div><div class="bottom-fold"></div>
+        <div class="seal"><span id="sealMonogram">A & Y</span></div>
+        <div class="glow"></div>
+      </div>
+      <p class="tap">Tap the seal to open</p>
+    </div>
+  </div>
+
+  <main id="invite" class="invite" aria-hidden="true">
+    <section class="hero">
+      <img id="heroImage" class="hero-bg" alt="">
+      <div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <div class="ornament">✦</div>
+        <h1><span id="bride"></span><small>&</small><span id="groom"></span></h1>
+        <p id="displayDate" class="date"></p>
+      </div>
+      <div class="scroll-mark">⌄</div>
+    </section>
+
+    <section class="section intro reveal">
+      <div class="arch-card">
+        <div class="tiny-ornament">❦</div>
+        <h2 id="invitationTitle" class="arabic"></h2>
+        <p id="invitationText"></p>
+        <div class="signature"><span id="sigBride"></span> & <span id="sigGroom"></span></div>
+      </div>
+    </section>
+
+    <section class="section countdown-section reveal">
+      <p class="eyebrow">Until we celebrate together</p>
+      <div id="countdown" class="countdown">
+        <div><b id="days">000</b><span>Days</span></div>
+        <i>:</i><div><b id="hours">00</b><span>Hours</span></div>
+        <i>:</i><div><b id="minutes">00</b><span>Minutes</span></div>
+        <i>:</i><div><b id="seconds">00</b><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2 class="script-title">Evening of Ceremonial</h2>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <section class="section venue reveal">
+      <h2 class="script-title">Lieu</h2>
+      <div class="pin">⌖</div>
+      <h3 id="venue"></h3>
+      <p id="city"></p>
+      <img id="venueImage" alt="Wedding venue">
+      <a id="mapButton" class="button" target="_blank" rel="noopener">OPEN IN MAPS</a>
+    </section>
+
+    <section class="section reveal">
+      <h2 class="script-title">Dress Code</h2>
+      <div class="dress-figures">♚ ♛ ♚ ♛ ♚</div>
+      <p id="dressCode" class="narrow"></p>
+      <h3 class="script-sub">Color palette</h3>
+      <div id="palette" class="palette"></div>
+      <h3 class="script-sub">Note</h3>
+      <p id="note" class="narrow"></p>
+    </section>
+
+    <section class="section rsvp reveal">
+      <h2 class="script-title">Confirm Your Presence</h2>
+      <p class="narrow">We would be delighted to celebrate this special day with you.</p>
+      <form id="rsvpForm">
+        <label>Name<input name="name" required autocomplete="name"></label>
+        <label>Number of guests<input name="guests" type="number" min="1" max="10" value="1" required></label>
+        <fieldset>
+          <legend>Will you be present?</legend>
+          <label class="radio"><input type="radio" name="attendance" value="yes" checked> Joyfully accepts</label>
+          <label class="radio"><input type="radio" name="attendance" value="no"> Regretfully declines</label>
+        </fieldset>
+        <button class="button" type="submit">SUBMIT RSVP</button>
+        <p id="formMessage"></p>
+      </form>
+    </section>
+
+    <section class="section map-section reveal">
+      <h2 class="script-title">Where You'll Find Us</h2>
+      <iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Venue map"></iframe>
+      <div class="final-mark" id="finalMonogram"></div>
+    </section>
+  </main>
+
+  <button id="musicButton" class="music-button" aria-label="Play or pause music">♫</button>
+  <audio id="music" loop preload="auto"></audio>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
